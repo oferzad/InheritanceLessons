@@ -31,8 +31,34 @@ namespace InheritanceLessons
             return count;
         }
 
+        static double SumArea(Shape[] arr)
+        {
+            double sum = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                //למה זה הסדר של ההתניות?
+                if (arr[i] is Triangle)
+                {
+                    Triangle triangle = (Triangle)arr[i];
+                    sum += triangle.GetArea();
+                }
+                else if (arr[i] is Square)
+                {
+                    Square square = (Square)arr[i];
+                    sum += square.GetArea();
+                }
+                else if (arr[i] is Rectangle)
+                {
+                    Rectangle rectangle = (Rectangle)arr[i];
+                    sum += rectangle.GetArea();
+                }
+            }
+            return sum;
+        }
+
         static void Main(string[] args)
         {
+            #region POLYMORPHISM
             //Lesson plan
             //1. SHow the story of the Shape classes and draw the UML diagram
             //2. Show the code of the Shape classes
@@ -80,7 +106,17 @@ namespace InheritanceLessons
                     Console.WriteLine(shapes[i].GetColor());
                 }
             }
+            #endregion
+            #region Overloading with Polymorphism
+            //Lesson plan
+            //1. Make a short rehersal of the last lesson by writing several castings and ask the students to find the errors
+            //2. Explain the concept of overloading with polymorphism
+            //3. Draw the UML diagram of the classes and demonstrate the concept of overloading with polymorphism
+            //4. Do the exercises from the page
+
+            #endregion
+            
         }
-          
+
     }
 }
