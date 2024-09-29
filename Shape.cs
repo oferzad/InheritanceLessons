@@ -8,7 +8,7 @@ namespace InheritanceLessons
 {
     class Shape
     {
-        private string color;
+        protected string color;
         public Shape(string color)
         {
             this.color = color;
@@ -37,7 +37,7 @@ namespace InheritanceLessons
 
         public double GetArea()
         {
-            return this.baseLength * this.heightLength;
+            return this.baseLength * this.heightLength / 2;
         }
 
         public double GetBaseLength()
