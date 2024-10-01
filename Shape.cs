@@ -22,6 +22,11 @@ namespace InheritanceLessons
         {
             this.color = color;
         }
+
+        public virtual double GetArea()
+        {
+            return 0;
+        }
     }
 
     class Triangle : Shape
@@ -35,7 +40,7 @@ namespace InheritanceLessons
             this.heightLength = heightLength;
         }
 
-        public double GetArea()
+        public override double GetArea()
         {
             return this.baseLength * this.heightLength / 2;
         }
@@ -69,7 +74,7 @@ namespace InheritanceLessons
         {
             return this.width;
         }
-        public double GetArea()
+        public override double GetArea()
         {
             return this.length * this.width;
         }
